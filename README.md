@@ -1,7 +1,7 @@
 # LeetCode DSA Journey 🚀
 
 ## 📌 Goal
-Build strong problem-solving skills for technical interviews.
+Building strong problem-solving skills for technical interviews.
 
 /Arrays
 /Strings
