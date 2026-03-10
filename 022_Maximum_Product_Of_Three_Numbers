@@ -1,0 +1,18 @@
+"""
+Problem: Maximum Product Of Three Numbers
+Difficulty: Easy
+Date: 10-03-2026
+
+Given an integer array nums, find three numbers whose product is maximum and return the maximum product.
+
+Example 1:
+Input: nums = [1,2,3]
+Output: 6
+"""
+
+class Solution:
+    def maximumProduct(self, nums: List[int]) -> int:
+        sort1 = sorted(nums)
+        case1 = sort1[-1] * sort1[-2] * sort1[-3]
+        case2 = sort1[0] * sort1[1] * sort1[-1]
+        return max(case1, case2)
