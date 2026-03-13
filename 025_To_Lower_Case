@@ -1,0 +1,16 @@
+"""
+Problem: To Lower Case
+Difficulty: Easy
+Date: 13-03-2026
+
+Given a string s, return the string after replacing every uppercase letter with the same lowercase letter.
+
+Example 1:
+Input: s = "Hello"
+Output: "hello"
+"""
+
+class Solution:
+    def toLowerCase(self, s: str) -> str:
+        result = s.lower()
+        return result 
