@@ -1,0 +1,23 @@
+"""
+Problem: Remove Digit From Number To Maximize Result
+Difficulty: Easy
+Date: 29-03-2026
+
+You are given a string number representing a positive integer and a character digit.
+Return the resulting string after removing exactly one occurrence of digit from number such that the value of the resulting string in decimal form is maximized. The test cases are generated such that digit occurs at least once in number.
+
+Example 1:
+Input: number = "123", digit = "3"
+Output: "12"
+Explanation: There is only one '3' in "123". After removing '3', the result is "12"
+"""
+
+class Solution:
+    def removeDigit(self, number: str, digit: str) -> str:
+        max_num = ""
+        for i in range(len(number)):
+            if number[i] == digit:
+                temp = number[:i] + number[i+1:]
+                if temp > max_num:
+                    max_num = temp
+        return max_num
