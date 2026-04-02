@@ -1,0 +1,22 @@
+"""
+Problem: Greatest English Letter In Upper And Lower Case
+Difficulty: Easy
+Date: 02-04-2026
+
+Given a string of English letters s, return the greatest English letter which occurs as both a lowercase and uppercase letter in s. The returned letter should be in uppercase. If no such letter exists, return an empty string.
+An English letter b is greater than another letter a if b appears after a in the English alphabet.
+
+Example 1:
+Input: s = "lEeTcOdE"
+Output: "E"
+Explanation:
+The letter 'E' is the only letter to appear in both lower and upper case.
+"""
+
+class Solution:
+    def greatestLetter(self, s: str) -> str:
+        for i in range(25, -1, -1):
+            ch = chr(ord('A') + i)
+            if ch in s and ch.lower() in s:
+                return ch
+        return ""
