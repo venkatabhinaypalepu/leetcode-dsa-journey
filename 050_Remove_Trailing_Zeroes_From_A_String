@@ -1,0 +1,24 @@
+"""
+Problem: Remove Trailing Zeroes From A String
+Difficulty: Easy
+Date: 07-04-2026
+
+Given a positive integer num represented as a string, return the integer num without trailing zeros as a string.
+
+Example 1:
+Input: num = "51230100"
+Output: "512301"
+Explanation: Integer "51230100" has 2 trailing zeros, we remove them and return integer "512301".
+"""
+
+class Solution:
+    def removeTrailingZeros(self, num: str) -> str:
+        number = ""
+        zero = True
+        for i in range(len(num)-1, -1, -1):
+            if num[i] == '0' and zero:
+                continue
+            else:
+                zero = False
+                number = num[i] + number  
+        return number
