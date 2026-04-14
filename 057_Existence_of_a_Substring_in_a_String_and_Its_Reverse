@@ -1,0 +1,22 @@
+"""
+Problem: Existence of a Substring in a String and Its Reverse
+Difficulty: Easy
+Date: 14-04-2026
+
+Given a string s, find any substring of length 2 which is also present in the reverse of s.
+Return true if such a substring exists, and false otherwise.
+
+Example 1:
+Input: s = "leetcode"
+Output: true
+Explanation: Substring "ee" is of length 2 which is also present in reverse(s) == "edocteel".
+"""
+
+class Solution:
+    def isSubstringPresent(self, s: str) -> bool:
+        string = ""
+        for i in range(len(s)-1):
+            string = s[i] + s[i+1]
+            if string in s[::-1]:
+                return True
+        return False
