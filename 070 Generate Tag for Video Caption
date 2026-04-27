@@ -1,0 +1,34 @@
+"""
+Problem: Generate Tag for Video Caption
+Difficulty: Easy
+Date: 27-04-2026
+
+You are given a string caption representing the caption for a video.
+The following actions must be performed in order to generate a valid tag for the video:
+Combine all words in the string into a single camelCase string prefixed with '#'. A camelCase string is one where the first letter of all words except the first one is capitalized. All characters after the first character in each word must be lowercase.
+Remove all characters that are not an English letter, except the first '#'.
+Truncate the result to a maximum of 100 characters.
+Return the tag after performing the actions on caption.
+
+Example 1:
+Input: caption = "Leetcode daily streak achieved"
+Output: "#leetcodeDailyStreakAchieved"
+Explanation:
+The first letter for all words except "leetcode" should be capitalized.
+"""
+
+class Solution:
+    def generateTag(self, caption: str) -> str:
+        low = caption.lower()
+        words = low.split()
+        if len(words) == 0:
+            return "#"
+        string = "#"
+        string = string + words[0]
+        for i in range(1, len(words)):
+            word = words[i]
+            word = word[0].upper() + word[1:]
+            string = string + word
+        while len(string) > 100:
+            string = string[:-1]
+        return string
