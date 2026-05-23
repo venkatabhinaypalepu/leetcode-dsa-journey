@@ -1,0 +1,26 @@
+"""
+Problem: Valid Palindrome II
+Difficulty: Easy
+Date: 23-05-2026
+
+Given a string s, return true if the s can be palindrome after deleting at most one character from it.
+
+Example 1:
+Input: s = "aba"
+Output: true
+"""
+
+class Solution:
+    def validPalindrome(self, s: str) -> bool:
+        left = 0
+        right = len(s) - 1
+        while left < right:
+            if s[left] != s[right]:
+                D1 = s[left+1:right+1]
+                D2 = s[left:right]
+                if D1 == D1[::-1] or D2 == D2[::-1]:
+                    return True
+                return False
+            left = left + 1
+            right = right - 1
+        return True
