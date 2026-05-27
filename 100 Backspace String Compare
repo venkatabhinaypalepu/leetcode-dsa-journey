@@ -1,0 +1,29 @@
+"""
+Problem: Backspace String Compare 
+Difficulty: Easy
+Date: 27-05-2026
+
+Given two strings s and t, return true if they are equal when both are typed into empty text editors. '#' means a backspace character.
+Note that after backspacing an empty text, the text will continue empty.
+
+Example 1:
+Input: s = "ab#c", t = "ad#c"
+Output: true
+Explanation: Both s and t become "ac".
+"""
+
+class Solution:
+    def backspaceCompare(self, s: str, t: str) -> bool:
+        S = ''
+        for i in s:
+            if i != '#':
+                S = S + i
+            else:
+                S = S[:-1]
+        T = ''
+        for j in t:
+            if j != '#':
+                T = T + j
+            else:
+                T = T[:-1]
+        return S == T
