@@ -1,0 +1,31 @@
+"""
+Problem: Reverse Only Letters
+Difficulty: Easy
+Date: 29-05-2026
+
+Given a string s, reverse the string according to the following rules:
+All the characters that are not English letters remain in the same position.
+All the English letters (lowercase or uppercase) should be reversed.
+Return s after reversing it.
+
+Example 1:
+Input: s = "ab-cd"
+Output: "dc-ba"
+"""
+
+class Solution:
+    def reverseOnlyLetters(self, s: str) -> str:
+        alpha=''
+        for i in s:
+            if i.isalpha() == True:
+                alpha = alpha + i
+        revs = alpha[::-1]
+        res = ''
+        count = -1
+        for i in s:
+            if i.isalpha() == True:
+                count = count + 1
+                res = res + revs[count]
+            else:
+                res = res + i
+        return res
