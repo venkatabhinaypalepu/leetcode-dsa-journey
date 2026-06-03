@@ -1,0 +1,29 @@
+"""
+Problem: Find Words That Can Be Formed by Characters
+Difficulty: Easy
+Date: 03-06-2026
+
+You are given an array of strings words and a string chars.
+A string is good if it can be formed by characters from chars (each character can only be used once for each word in words).
+Return the sum of lengths of all good strings in words.
+
+Example 1:
+Input: words = ["cat","bt","hat","tree"], chars = "atach"
+Output: 6
+Explanation: The strings that can be formed are "cat" and "hat" so the answer is 3 + 3 = 6.
+"""
+
+class Solution:
+    def countCharacters(self, words: List[str], chars: str) -> int:
+        l = 0
+        for word in words:
+            temp = chars
+            valid = True
+            for i in word:
+                if i not in temp:
+                    valid = False
+                    break
+                temp = temp.replace(i, '', 1)
+            if valid:
+                l = l + len(word)
+        return l
