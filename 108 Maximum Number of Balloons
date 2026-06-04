@@ -1,0 +1,25 @@
+"""
+Problem: Maximum Number of Balloons
+Difficulty: Easy
+Date: 04-06-2026
+
+Given a string text, you want to use the characters of text to form as many instances of the word "balloon" as possible.
+You can use each character in text at most once. Return the maximum number of instances that can be formed.
+
+Example 1:
+Input: text = "nlaebolko"
+Output: 1
+"""
+
+class Solution:
+    def maxNumberOfBalloons(self, text: str) -> int:
+        word = 'balloon'
+        count = 0
+        while True:
+            temp = text
+            for i in word:
+                if i not in temp:
+                    return count
+                temp = temp.replace(i, '', 1)
+            count = count + 1
+            text = temp
