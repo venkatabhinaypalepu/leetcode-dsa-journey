@@ -1,0 +1,21 @@
+"""
+Problem: Thousand Separator
+Difficulty: Easy
+Date: 10-06-2026
+
+Given an integer n, add a dot (".") as the thousands separator and return it in string format.
+
+Example 1:
+Input: n = 987
+Output: "987"
+"""
+
+class Solution:
+    def thousandSeparator(self, n: int) -> str:
+        N = str(n)
+        rev = N[::-1]
+        res = ''
+        for i in range(0, len(rev), 3):
+            res = res + rev[i:i+3] + '.'
+        res = res[:-1]
+        return res[::-1]
