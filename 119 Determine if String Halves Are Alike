@@ -1,0 +1,33 @@
+"""
+Problem: Determine if String Halves Are Alike
+Difficulty: Easy
+Date: 15-06-2026
+
+You are given a string s of even length. Split this string into two halves of equal lengths, and let a be the first half and b be the second half.
+Two strings are alike if they have the same number of vowels ('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'). Notice that s contains uppercase and lowercase letters.
+Return true if a and b are alike. Otherwise, return false.
+
+Example 1:
+Input: s = "book"
+Output: true
+Explanation: a = "bo" and b = "ok". a has 1 vowel and b has 1 vowel. Therefore, they are alike.
+"""
+
+class Solution:
+    def halvesAreAlike(self, s: str) -> bool:
+        lens = len(s) // 2
+        p1 = s[0:lens]
+        p2 = s[lens:]
+        vows = "aeiouAEIOU"
+        countp1 = 0
+        for i in p1:
+            if i in vows:
+                countp1 = countp1 + 1
+        countp2 = 0
+        for j in p2:
+            if j in vows:
+                countp2 = countp2 + 1
+        if countp1 == countp2:
+            return True
+        else:
+            return False
