@@ -1,0 +1,24 @@
+"""
+Problem: First Matching Character From Both Ends
+Difficulty: Easy
+Date: 19-07-2026
+
+You are given a string s of length n consisting of lowercase English letters.
+Return the smallest index i such that s[i] == s[n - i - 1].
+If no such index exists, return -1.
+
+Example 1:
+Input: s = "abcacbd"
+Output: 1
+Explanation:
+At index i = 1, s[1] and s[5] are both 'b'.
+No smaller index satisfies the condition, so the answer is 1.
+"""
+
+class Solution:
+    def firstMatchingIndex(self, s: str) -> int:
+        n = len(s)
+        for i in range(n):
+            if s[i] == s[n-i-1]:
+                return i
+        return -1
