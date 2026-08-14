@@ -1,0 +1,18 @@
+"""
+Problem: Add Binary
+Difficulty: Easy
+Date: 14-08-2026
+
+Given two binary strings a and b, return their sum as a binary string.
+
+Example 1:
+Input: a = "11", b = "1"
+Output: "100"
+"""
+
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        a = int(a,2)
+        b = int(b,2)
+        total = a + b
+        return bin(total)[2:]
