@@ -1,0 +1,27 @@
+"""
+Problem: Balanced Binary Tree
+Difficulty: Easy
+Date: 20-08-2026
+
+Given a binary tree, determine if it is height-balanced.
+
+Example 1:
+Input: root = [3,9,20,null,null,15,7]
+Output: true
+"""
+
+class Solution:
+    def isBalanced(self, root: Optional[TreeNode]) -> bool:
+        def check(root):
+            if root is None:
+                return 0
+            left = check(root.left)
+            right = check(root.right)
+            if abs(left-right) > 1:
+                return -1
+            if left == -1 or right == -1:
+                return -1
+            return max(left,right) + 1
+        if check(root) == -1:
+            return False
+        return True
